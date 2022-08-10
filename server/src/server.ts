@@ -12,7 +12,8 @@ import { logEvents } from './middlewares/logEvents';
 import { errorResponse } from './middlewares/errorResponse';
 
 import authRoute from './routes/auth';
-import tasksRoute from './routes/tasks'
+import tasksRoute from './routes/tasks';
+import usersRoute from './routes/users';
 
 import NotFoundError from './library/error/NotFoundError';
 import { credentials } from './middlewares/credentials';
@@ -39,6 +40,7 @@ app.use('/auth', authRoute);
 /* Protected Routes */
 app.use(verifyJWT);
 app.use('/tasks', tasksRoute);
+app.use('/users', usersRoute);
 
 /* Error handling */
 app.get('*', (req: Request, res: Response, next: NextFunction) => next(new NotFoundError(req.path)))
