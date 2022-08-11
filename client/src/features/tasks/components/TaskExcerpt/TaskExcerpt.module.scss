@@ -1,0 +1,72 @@
+@use '../../../../sass/variables' as var;
+
+.excerpt {
+  width: 100%;
+  margin: auto;
+  border-bottom: var.$light-color 1px solid;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+
+  &:hover {
+    background-color: lighten(var.$light-color, 1);
+    cursor: pointer;
+  }
+
+  label {
+    flex-grow: 1;
+    margin-left: 1rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .checkboxContainer {
+    flex-grow: 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: solid 1px grey;
+    border-radius: 50%;
+
+    input[type='checkbox'] {
+      display: none;
+    }
+
+    svg {
+      width: 1.4rem;
+      height: auto;
+      border-radius: 50%;
+      color: rgb(187, 187, 187);
+
+      &:hover {
+        color: #333;
+      }
+    }
+
+    input[type='checkbox']:checked ~ svg {
+      background-color: var.$primary-color;
+      color: white;
+
+      &:hover {
+        background-color: grey;
+      }
+    }
+  }
+
+  svg {
+    padding: 5px;
+    width: 30px;
+    height: auto;
+
+    &:hover {
+      cursor: pointer;
+      color: #b90000;
+    }
+  }
+}

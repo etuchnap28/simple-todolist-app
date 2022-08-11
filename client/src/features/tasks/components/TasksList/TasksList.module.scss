@@ -1,0 +1,26 @@
+@use '../../../../sass/variables' as var;
+
+.tasksList {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  min-width: 400px;
+  margin: auto;
+  margin-top: 3rem;
+  padding: 0rem 1.5rem;
+}
+
+.addTaskLink {
+  color: var.$primary-color;
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  column-gap: 5px;
+  margin-top: 1rem;
+  margin-left: 1rem;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
