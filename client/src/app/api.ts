@@ -14,7 +14,7 @@ import { Token } from "../features/auth/types";
 const mutex = new Mutex();
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'http://localhost:8000',
+  baseUrl: 'https://simple-todoo.herokuapp.com',
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).auth.token;
     if (token) {
