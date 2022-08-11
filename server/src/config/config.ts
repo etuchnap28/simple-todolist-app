@@ -12,7 +12,8 @@ const ALLOWED_ORIGINS = [
   'http://localhost:1337',
   'http://localhost:8000',
   'http://localhost:3000',
-  'https://simple-todoo.herokuapp.com/' 
+  'https://simple-todoo.herokuapp.com',
+  'https://minh-simple-todolist.netlify.app'
 ];
 
 const CORS_OPTIONS: cors.CorsOptions = {
