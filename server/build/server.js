@@ -29,6 +29,9 @@ app.use(express_1.default.urlencoded({ extended: false }));
 app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
 /* Healthcheck */
+app.get('/', (req, res, next) => {
+    res.send('Running...');
+});
 app.get('/ping', (req, res, next) => res.status(200).json({ message: 'pong' }));
 /* Routes */
 app.use('/auth', auth_1.default);
@@ -36,9 +39,6 @@ app.use('/auth', auth_1.default);
 app.use(verifyJWT_1.default);
 app.use('/tasks', tasks_1.default);
 app.use('/users', users_1.default);
-app.get('/', (req, res) => {
-    res.send('Server is running');
-});
 /* Error handling */
 app.get('*', (req, res, next) => next(new NotFoundError_1.default(req.path)));
 app.use(errorResponse_1.errorResponse);

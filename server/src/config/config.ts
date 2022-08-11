@@ -6,12 +6,13 @@ const MONGO_USERNAME = process.env.MONGO_USERNAME;
 const MONGO_PASSWORD = process.env.MONGO_PASSWORD;
 const MONGO_URL = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@simple-todo-cluster.pwyduzh.mongodb.net/test`;
 
-const SERVER_PORT = process.env.SERVER_PORT ? Number(process.env.SERVER_PORT) : 1337;
+const SERVER_PORT = process.env.PORT || 5000;
 
 const ALLOWED_ORIGINS = [ 
   'http://localhost:1337',
   'http://localhost:8000',
-  'http://localhost:3000' 
+  'http://localhost:3000',
+  'https://simple-todoo.herokuapp.com/' 
 ];
 
 const CORS_OPTIONS: cors.CorsOptions = {
