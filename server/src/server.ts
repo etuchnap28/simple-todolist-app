@@ -42,6 +42,10 @@ app.use(verifyJWT);
 app.use('/tasks', tasksRoute);
 app.use('/users', usersRoute);
 
+app.get('/', (req: Request, res: Response) => {
+  res.send('Server is running');
+})
+
 /* Error handling */
 app.get('*', (req: Request, res: Response, next: NextFunction) => next(new NotFoundError(req.path)))
 app.use(errorResponse);
