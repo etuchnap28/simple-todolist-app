@@ -6,7 +6,7 @@ import { useLoginMutation } from '../../auth.service';
 import styles from '../Form.module.scss';
 
 const Login = () => {
-  const errParagraph = useRef<HTMLParagraphElement>(null);
+  const errParagraphRef = useRef<HTMLParagraphElement>(null);
   const navigate = useNavigate();
 
   const [username, usernameAttribs, resetUsername] = useFormInput(useState(''));
@@ -35,8 +35,8 @@ const Login = () => {
 
       navigate('/app/tasks');
     } catch (err: any) {
-      console.log(err);
-      if (errParagraph && errParagraph.current) errParagraph.current.focus();
+      setErrMsg(err.data.error.message);
+      if (errParagraphRef && errParagraphRef.current) errParagraphRef.current.focus();
     }
   }
 
@@ -56,6 +56,7 @@ const Login = () => {
     <div className={styles.form}>
       <section className={styles.formMain}>
         <h1 className={styles.formHeader}>Login</h1>
+        <p className={errMsg ? styles.formError : ''} ref={errParagraphRef}>{errMsg}</p>
         <form className={styles.formBody} onSubmit={handleFormSubmitted}>
           <div className={styles.txtField}>
             <input 

@@ -12,7 +12,7 @@
 
   .formMain {
     background-color: white;
-    min-width: 400px;
+    min-width: 350px;
     width: fit-content;
     height: fit-content;
     border-radius: 10px;
@@ -27,6 +27,13 @@
       width: 100%;
       padding: 1rem 0;
       border-bottom: 1px solid silver;
+    }
+
+    .formError {
+      color: red;
+      align-self: flex-start;
+      margin-top: 1rem;
+      margin-left: 3.5rem;
     }
 
     .formBody {
@@ -78,9 +85,33 @@
           transition: .5s;
         }
       }
+
+      .formRequirements {
+        width: fit-content;
+        max-width: 300px;
+        font-size: 0.9rem;
+        color: #7c7c7c;
+        list-style: none;
+
+        li {
+          margin-bottom: 5px;
+
+          svg {
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px;
+
+            &.valid {
+              background-color: green;
+            }
+          }
+        }
+      }
+
       .formBtn {
         width: 100%;
-        margin-bottom: 1.5rem;
+        margin: 1.5rem 0;
       }
       .loginLink {
         margin-bottom: 1rem;

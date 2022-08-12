@@ -42,8 +42,8 @@ export const authApi = baseApi.injectEndpoints({
           await queryFulfilled;
           dispatch(loggedOut());
           dispatch(baseApi.util.resetApiState());
-        } catch (err) {
-          console.log(err);
+        } catch {
+          // error will be handled in component
         }
       }
     })
